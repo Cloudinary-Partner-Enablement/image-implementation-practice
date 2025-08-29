@@ -20,8 +20,10 @@
 1. Open the `upload.js` file
 2. Follow the prompts to upload image files with various parameters
 
-   a. Challenge #1 - Create an upload preset & upload an asset
+   a. Challenge #1 - Basic upload w/ various parameters
 
-   b. Challenge #2 - Upload w/ auto-tagging
+   b. Challenge #2 - Create an upload preset & upload an asset
 
-   c. Challenge #3 - Using `eval` on upload
+   c. Challenge #3 - Upload w/ auto-tagging
+
+   d. Challenge #4 - Using `eval` on upload
