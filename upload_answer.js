@@ -35,6 +35,19 @@ cloudinary.config({
 //    colors
 //    tags (choose your own)
 ////////////////////////////////////////////
+cloudinary.uploader
+  .upload(
+    "https://cdn.pixabay.com/photo/2025/03/22/07/09/havanese-dog-9486395_1280.jpg",
+    {
+      public_id: "dog_practice",
+      //asset_folder: "image_practice",
+      //folder: "image_practice",
+      resource_type: "auto",
+      colors: true,
+      tags: "animal,dog,image",
+    }
+  )
+  .then((result) => console.log(result));
 
 ////////////////////////////////////////////
 // Upload Challenge #2
@@ -48,6 +61,24 @@ cloudinary.config({
 //        asset_folder / folder;
 //        upload_preset
 ////////////////////////////////////////////
+cloudinary.api
+  .create_upload_preset({
+    name: "practice_preset",
+    transformation: "w_200,f_auto,g_auto,q_auto",
+  })
+  .then((result) => console.log(result));
+
+cloudinary.uploader
+  .upload(
+    "https://cdn.pixabay.com/photo/2025/03/22/07/09/havanese-dog-9486395_1280.jpg",
+    {
+      upload_preset: "practice_preset",
+      public_id: "dog_preset",
+      //asset_folder: "image_practice",
+      //folder: "image_practice",
+    }
+  )
+  .then((result) => console.log(result));
 
 ////////////////////////////////////////////
 // Upload Challenge #3
@@ -58,12 +89,36 @@ cloudinary.config({
 //    auto_tagging - set at 0.7
 //    detection/categorization (depending on which type you choose - may need to signup for an add-on to test)
 ////////////////////////////////////////////
+cloudinary.uploader
+  .upload(
+    "https://cdn.pixabay.com/photo/2025/03/22/07/09/havanese-dog-9486395_1280.jpg",
+    {
+      public_id: "dog_auto_tag",
+      //asset_folder: "image_practice",
+      //folder: "image_practice",
+      categorization: "google_tagging",
+      auto_tagging: 0.7,
+    }
+  )
+  .then((result) => console.log(result));
 
 ////////////////////////////////////////////
 // Upload Challenge #4
 // Image: https://cdn.pixabay.com/photo/2025/03/22/07/09/havanese-dog-9486395_1280.jpg
-// Upload w/ eval:
+// Upload w/ on_success:
 //    public_id
 //    asset_folder/folder
 //    on_sucess - add metadata of your choice to the image
 ////////////////////////////////////////////
+cloudinary.uploader
+  .upload(
+    "https://cdn.pixabay.com/photo/2025/03/22/07/09/havanese-dog-9486395_1280.jpg",
+    {
+      public_id: "on_success_dog",
+      //asset_folder: "image_practice",
+      //folder: "image_practice",
+      on_success:
+        "current_asset.update({ metadata: { rating: 'high', usage_types: ['web', 'print', 'social'] } })",
+    }
+  )
+  .then((result) => console.log(result));
