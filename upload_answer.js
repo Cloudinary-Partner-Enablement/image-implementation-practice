@@ -12,7 +12,7 @@ cloudinary.config({
 // Documentation:
 // Basic upload: https://cloudinary.com/documentation/image_upload_api_reference#upload
 // Presets: https://cloudinary.com/documentation/admin_api#create_an_upload_preset
-// Eval: https://cloudinary.com/documentation/upload_parameters#eval_modify_upload_options_before_upload
+// On success: https://cloudinary.com/documentation/upload_parameters#on_success_update_metadata_after_upload
 ////////////////////////////////////////////
 
 ////////////////////////////////////////////
