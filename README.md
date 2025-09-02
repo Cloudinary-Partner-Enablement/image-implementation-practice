@@ -26,4 +26,6 @@
 
    c. Challenge #3 - Upload w/ auto-tagging
 
-   d. Challenge #4 - Using `eval` on upload
+   d. Challenge #4 - Using `on_success` on upload
+
+3. View potential answers in `upload_answer.js`
