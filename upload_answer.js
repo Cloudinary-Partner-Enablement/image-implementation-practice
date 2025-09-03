@@ -110,15 +110,16 @@ cloudinary.uploader
 //    asset_folder/folder
 //    on_sucess - add metadata of your choice to the image
 ////////////////////////////////////////////
-cloudinary.uploader
-  .upload(
-    "https://cdn.pixabay.com/photo/2025/03/22/07/09/havanese-dog-9486395_1280.jpg",
-    {
-      public_id: "on_success_dog",
-      //asset_folder: "image_practice",
-      //folder: "image_practice",
-      on_success:
-        "current_asset.update({ metadata: { rating: 'high', usage_types: ['web', 'print', 'social'] } })",
-    }
-  )
-  .then((result) => console.log(result));
+cloudinary.uploader.upload(
+  "https://cdn.pixabay.com/photo/2025/03/22/07/09/havanese-dog-9486395_1280.jpg",
+  {
+    public_id: "test_onSuccess",
+    //asset_folder: "image_practice",
+    //folder: "image_practice",
+    on_success: 'current_asset.update({context: {caption: "Sample Image"}})',
+  },
+  (error, result) => {
+    console.error("Error", error);
+    console.log("Response", result);
+  }
+);
